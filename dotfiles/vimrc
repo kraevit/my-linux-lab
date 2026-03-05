@@ -6,15 +6,23 @@ filetype plugin indent on
 
 " Basic Settings
 set number              " Show line numbers
-set relativenumber      " Relative line numbers for easier jumping
+set relativenumber      " Relative line numbers
 set tabstop=4           " One Tab = 4 spaces
-set shiftwidth=4        " Indentation amount for >> and <<
+set shiftwidth=4        " Indentation amount
 set expandtab           " Convert tabs to spaces
-set autoindent          " Copy indent from current line when starting a new one
-set smartindent         " Do smart autoindenting when starting a new line
-set cursorline          " Highlight the line where the cursor is located
+set autoindent          " Copy indent from current line
+set smartindent         " Smart autoindenting
+set cursorline          " Highlight current line
 syntax on               " Enable syntax highlighting
 
 " Automatic Header for Bash scripts
-" Triggered when creating a new .sh file
 autocmd BufNewFile *.sh 0put = '#!/bin/bash' | $put = '' | startinsert
+
+" --- Mappings ---
+
+" Run current Bash script with F5
+nnoremap <F5> :w<CR>:!bash %<CR>
+
+" Run ShellCheck with \s
+let mapleader = "\\"
+nnoremap <leader>s :w<CR>:!shellcheck %<CR>
