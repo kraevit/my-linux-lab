@@ -1,0 +1,11 @@
+# Vim swap files
+.*.sw?
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.directory
+
+# Node modules (for coc.nvim)
+node_modules/
