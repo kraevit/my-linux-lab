@@ -1,3 +1,9 @@
+" Essential for many plugins and features
+set nocompatible
+
+" Enable file type detection, plugins and indenting
+filetype plugin indent on
+
 " Basic Settings
 set number              " Show line numbers
 set relativenumber      " Relative line numbers for easier jumping
@@ -9,9 +15,6 @@ set smartindent         " Do smart autoindenting when starting a new line
 set cursorline          " Highlight the line where the cursor is located
 syntax on               " Enable syntax highlighting
 
-" Filetype recognition
-filetype plugin indent on
-
 " Automatic Header for Bash scripts
-" When creating a new .sh file, insert Shebang and move cursor to the end
+" Triggered when creating a new .sh file
 autocmd BufNewFile *.sh 0put = '#!/bin/bash' | $put = '' | startinsert
